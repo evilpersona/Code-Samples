@@ -394,3 +394,40 @@ function getSelectedSigns(selected){
             }
         });
     }
+
+
+// Mouse
+
+    var mouseX=window.innerWidth/2,
+    mouseY=window.innerHeight/2;
+
+    var circle = { 
+        el:$('#circle'),
+        x:window.innerWidth/2, 
+        y:window.innerHeight/2, 
+        w:32, 
+        h:32, 
+        update:function(){
+            l = this.x-this.w/2; 
+            t = this.y-this.h/2; 
+            this.el.css({ 
+                'transform':
+                'translate3d('+l+'px,'+t+'px, 0)' }); 
+            }
+    }
+
+    $(window).mousemove (function(e){
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    })
+
+    setInterval (move,1000/60)
+    function move(){
+        circle.x = lerp (circle.x, mouseX, 0.2);
+        circle.y = lerp (circle.y, mouseY, 0.2);
+        circle.update() 
+    }
+
+    function lerp (start, end, amt){
+        return (1-amt)*start+amt*end
+    }
