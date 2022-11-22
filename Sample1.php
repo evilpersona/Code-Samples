@@ -12,7 +12,7 @@ function wowNow(){
 	$headers = [
 			
 		'Content-Type: application/json',
-		'Ocp-Apim-Subscription-Key: 25f27806439943bc9c8e2386ddf67c5b'
+		'Ocp-Apim-Subscription-Key: xxxxxxxxxxxxxxxxxx'
 	  ];
 	//$session = ayudaLogin();
 
